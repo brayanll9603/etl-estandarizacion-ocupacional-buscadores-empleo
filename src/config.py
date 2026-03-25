@@ -34,7 +34,7 @@ DIVIPOLA_COL_CP_NOM   = "  Nombre  "
 
 # ── Modelo de embeddings ─────────────────────────────────────
 EMBEDDING_MODEL    = "paraphrase-multilingual-MiniLM-L12-v2"
-SIMILARITY_THRESHOLD = 0.60    # umbral mínimo para aceptar imputación
+SIMILARITY_THRESHOLD = 0.80    # umbral mínimo para aceptar imputación
 
 # ── Niveles educativos oficiales ──────────────────────────────
 NIVELES_EDUCATIVOS = [
