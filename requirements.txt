@@ -1,0 +1,9 @@
+pandas>=2.0
+openpyxl>=3.1
+sentence-transformers>=2.7
+scikit-learn>=1.4
+rapidfuzz>=3.6
+pyarrow>=15.0
+matplotlib>=3.7
+seaborn>=0.13
+wordcloud>=1.9

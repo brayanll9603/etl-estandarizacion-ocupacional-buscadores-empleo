@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.py[cod]
+.env
+*.egg-info/
+dist/
+build/
+
+# Entornos virtuales
+venv/
+.venv/
+
+# Resultados generados con timestamp (se regeneran con el pipeline)
+data/processed/
+
+# Caché de embeddings (se regenera automáticamente en la primera ejecución)
+data/catalogos/cuoc_embeddings.npy
+data/catalogos/cuoc_textos.npy
+
+# IDE
+.vscode/
+.idea/
+
+# Lo que SÍ se versiona en Git:
+# data/raw/          → datos anonimizados de buscadores
+# data/catalogos/    → catálogos oficiales DANE (CUOC, DIVIPOLA)
+# data/resultados/   → entregable final del pipeline
