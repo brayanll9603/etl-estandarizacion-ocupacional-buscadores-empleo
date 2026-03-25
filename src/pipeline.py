@@ -47,8 +47,6 @@ def leer_fuente(ruta: str) -> pd.DataFrame:
 # ─────────────────────────────────────────────────────────────
 # Función: ejecutar_pipeline
 # ─────────────────────────────────────────────────────────────
-
-# ─────────────────────────────────────────────────────────────
 def ejecutar_pipeline(
     ruta_input:    str   = "data/raw/Data_Proyecto.xlsx",
     col_ocupacion: str   = "ocupacion",        # columna de ocupación en el archivo fuente
@@ -107,7 +105,7 @@ def ejecutar_pipeline(
     # Técnica: Sentence Embeddings multilingüe + similitud coseno
     # El modelo convierte cada texto de ocupación en un vector numérico
     # y busca el vector más cercano en el catálogo CUOC.
-    # Solo se acepta la imputación si la similitud supera el umbral definido.
+    # Solo se acepta la imputación si la similitud supera el umbral definido >=80%.
     # La primera ejecución descarga el modelo (~470MB) y guarda embeddings
     # en caché para que las siguientes ejecuciones sean mucho más rápidas.
     t0 = time.time()
