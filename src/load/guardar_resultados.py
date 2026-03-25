@@ -1,17 +1,3 @@
-"""
-load/guardar_resultados.py
-───────────────────────────────────────────────────────────────
-Proyecto : Estandarización Buscadores de Empleo
-Archivo  : load/guardar_resultados.py
-Propósito: Persiste los resultados del pipeline en dos versiones
-           y genera un reporte de calidad del proceso.
-
-Archivos generados en data/processed/:
-  resultado_etl_FECHA.xlsx         → versión completa (auditoría)
-  resultado_etl_analisis_FECHA.xlsx → versión reducida (EDA)
-  reporte_calidad_FECHA.xlsx        → resúmenes por variable
-"""
-
 import os
 import pandas as pd
 from datetime import datetime
