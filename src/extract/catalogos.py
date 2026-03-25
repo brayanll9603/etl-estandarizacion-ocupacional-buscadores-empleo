@@ -1,17 +1,3 @@
-"""
-extract/catalogos.py
-───────────────────────────────────────────────────────────────
-Proyecto : Estandarización Buscadores de Empleo
-Archivo  : extract/catalogos.py
-Propósito: Carga y limpieza inicial de los catálogos oficiales.
-           Retorna DataFrames listos para ser usados en la fase
-           de transformación.
-
-Catálogos:
-  - CUOC 2025  : Clasificación Única de Ocupaciones para Colombia (DANE)
-  - DIVIPOLA   : División Político-Administrativa de Colombia (DANE)
-"""
-
 import pandas as pd
 import sys
 import os
@@ -26,15 +12,6 @@ from config import (
     DIVIPOLA_COL_MUN_COD, DIVIPOLA_COL_MUN_NOM,
 )
 
-
-# ─────────────────────────────────────────────────────────────
-# Función: cargar_cuoc
-# ─────────────────────────────────────────────────────────────
-# El catálogo CUOC tiene 3 niveles jerárquicos:
-#   Gran grupo  → código de 1 dígito  (ej. '0')
-#   Ocupación   → código de 4 dígitos (ej. '1100')
-#   Denominación→ código con punto    (ej. '01100.001')
-#
 # Para la imputación solo usamos las DENOMINACIONES porque son
 # el nivel más específico y el que mejor describe el cargo.
 # Se filtran usando str.contains(r"\.") que detecta el punto.
@@ -86,11 +63,7 @@ def cargar_cuoc() -> pd.DataFrame:
 #   CM = Cabecera Municipal   → la ciudad principal del municipio
 #   CP = Centro Poblado       → corregimientos y veredas
 #   CU = Cabecera de Corregimiento
-#
-# Solo usamos CM para tener UN registro único por municipio
-# y evitar duplicados. Sin este filtro, cada municipio aparece
-# varias veces (una por cada centro poblado).
-#
+
 # El archivo Excel tiene los encabezados reales en la fila 10
 # (índice 10, contando desde 0). Las primeras filas contienen
 # títulos y encabezados de sección del archivo original del DANE.
