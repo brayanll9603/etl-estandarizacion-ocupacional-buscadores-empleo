@@ -30,11 +30,7 @@ from load.guardar_resultados import (
 # ─────────────────────────────────────────────────────────────
 # Función: leer_fuente
 # ─────────────────────────────────────────────────────────────
-# Lee el archivo de datos crudos (xlsx o csv) y retorna un
-# DataFrame de pandas. Usa dtype=str para que todos los campos
-# se traten como texto y evitar que códigos como '05001'
-# se conviertan en números (perdiendo el cero inicial).
-# ─────────────────────────────────────────────────────────────
+
 def leer_fuente(ruta: str) -> pd.DataFrame:
     ext = os.path.splitext(ruta)[1].lower()
     if ext in (".xlsx", ".xlsm", ".xls"):
@@ -51,9 +47,7 @@ def leer_fuente(ruta: str) -> pd.DataFrame:
 # ─────────────────────────────────────────────────────────────
 # Función: ejecutar_pipeline
 # ─────────────────────────────────────────────────────────────
-# Función principal que ejecuta el pipeline completo.
-# Recibe parámetros configurables (nombres de columnas, umbral,
-# formato de salida) con valores por defecto definidos en config.py
+
 # ─────────────────────────────────────────────────────────────
 def ejecutar_pipeline(
     ruta_input:    str   = "data/raw/Data_Proyecto.xlsx",
