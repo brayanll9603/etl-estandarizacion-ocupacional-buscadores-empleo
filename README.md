@@ -1,7 +1,6 @@
 # Estandarización Buscadores de Empleo — Pipeline ETL
 
-Pipeline ETL para estandarización de variables críticas en bases de datos
-de personas orientadas laboralmente.
+Pipeline ETL orientado a la estandarización estructural de variables críticas (ocupación, nivel educativo, municipio, entre otras), mediante procesos de validación contra catálogos oficiales, reglas de negocio y técnicas de procesamiento de texto, con el fin de consolidar una base de datos analítica robusta y gobernada.
 
 ## Transformaciones
 
